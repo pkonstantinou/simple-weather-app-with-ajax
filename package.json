@@ -1,0 +1,32 @@
+{
+  "name": "simple-weather-app-with-ajax",
+  "version": "1.0.0",
+  "description": "A simple weather app using the openweathermap API and AJAX.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "./node_modules/.bin/webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pkonstantinou/simple-weather-app-with-ajax.git"
+  },
+  "author": "P Konstantinou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pkonstantinou/simple-weather-app-with-ajax/issues"
+  },
+  "homepage": "https://github.com/pkonstantinou/simple-weather-app-with-ajax#readme",
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv-webpack": "^6.0.0"
+  }
+}

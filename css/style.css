@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: rgb(29, 37, 41);
+}
+
+.weather-card {
+  position: relative;
+  background-color: rgb(34, 41, 46);
+  width: 500px;
+  height: 230px;
+  border: 1px solid rgba(253, 253, 253, 0.1);
+  border-radius: 8px;
+  transition: none !important;
+}
+
+.weather-card__date {
+  font-size: 1.2rem;
+}
+
+.weather-card__date,
+.weather-card__type,
+.weather-card__temperature {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.weather-card__image {
+  height: 60px;
+  width: 60px;
+  background-position: center;
+  background-size: cover;
+}
+
+.weather-card__temperature {
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+}
+
+.weather-card__temperature > span {
+  font-weight: 300;
+}
+
+#spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form {
+  width: 500px;
+}
+
+#city-name {
+  background-color: rgb(29, 37, 41);
+  color: white;
+  border: 1px solid rgba(253, 253, 253, 0.1);
+  border-radius: 8px;
+}
+
+#city-name::placeholder {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+#city-name:focus {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+#search-btn {
+  color: rgba(253, 253, 253, 0.6);
+  background-color: rgb(34, 41, 46);
+  border: 1px solid rgba(253, 253, 253, 0.1);
+  border-radius: 8px;
+}
+
+#search-btn:hover {
+  color: rgba(253, 253, 253, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}

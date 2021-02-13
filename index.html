@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div
+      class="container d-flex flex-column justify-content-center align-items-center mt-5"
+    >
+      <div class="form d-flex mb-2">
+        <input
+          type="text"
+          class="form-control mr-2 shadow-none"
+          id="city-name"
+          placeholder="City name"
+        />
+        <button id="search-btn" class="btn btn-primary w-50 shadow-none">
+          Get Weather
+        </button>
+      </div>
+      <div class="weather-card">
+        <h4 class="text-center text-white mt-4 weather-card__location"></h4>
+        <p class="weather-card__date text-center mt-3 mb-1"></p>
+        <p class="weather-card__type text-center mt-4 mb-1"></p>
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="weather-card__image"></div>
+          <div class="weather-card__temperature"></div>
+        </div>
+        <div id="spinner">
+          <div class="spinner-grow text-secondary" role="status"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
