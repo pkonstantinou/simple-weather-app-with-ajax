@@ -4,6 +4,8 @@ import {
   getWeatherByCoordinates,
 } from "./api";
 
+let msgId = 0;
+
 const getFullDate = () => {
   const months = [
     "January",
@@ -75,14 +77,39 @@ const validWeatherSearchEvent = (event) => {
   );
 };
 
+const validResponse = (data) => {
+  return Number.parseInt(data.cod) === 200;
+};
+
+const showNotFoundMessage = () => {
+  const message = document.querySelector("#message");
+  message.style.opacity = 1;
+  clearTimeout(msgId);
+  msgId = setTimeout(() => (message.style.opacity = 0), 5000);
+};
+
+const hideNotFoundMessage = () => {
+  const message = document.querySelector("#message");
+  const cityNameInput = document.querySelector("#city-name");
+  message.style.opacity = 0;
+  clearTimeout(msgId);
+  cityNameInput.focus();
+};
+
 const handleWeatherSearch = async (event) => {
   if (validWeatherSearchEvent(event)) {
     const cityNameInput = document.querySelector("#city-name");
     const data = await getWeatherByName(cityNameInput.value);
+    console.log(data);
+    if (validResponse(data)) {
+      loadWeatherCard(data);
+      cityNameInput.blur();
+    } else {
+      showNotFoundMessage();
+      cityNameInput.focus();
+    }
     cityNameInput.value = "";
-    cityNameInput.blur();
-    loadWeatherCard(data);
   }
 };
 
-export { initWeatherCard, handleWeatherSearch };
+export { initWeatherCard, handleWeatherSearch, hideNotFoundMessage };

@@ -11,6 +11,29 @@ body {
   background-color: rgb(29, 37, 41);
 }
 
+#message {
+  width: 500px;
+  height: 40px;
+  font-size: 0.9rem;
+  font-weight: 300;
+  background-color: rgb(50, 60, 68);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+#message i {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#message i:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .weather-card {
   position: relative;
   background-color: rgb(34, 41, 46);

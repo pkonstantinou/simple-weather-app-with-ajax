@@ -11,8 +11,13 @@ const getWeatherIconUrl = (code) => {
 
 const getWeatherByName = async (name) => {
   const url = `weather?q=${name}&units=metric&appid=${process.env.API_KEY}`;
-  const { data } = await api.get(url);
-  return data;
+  try {
+    const { data } = await api.get(url);
+    return data;
+  } catch (error) {
+    const { data } = error.response;
+    return data;
+  }
 };
 
 const getWeatherByCoordinates = async (lat, lon) => {
