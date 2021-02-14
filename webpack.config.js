@@ -1,13 +1,13 @@
 const path = require("path");
-const Dotenv = require("dotenv-webpack");
+// const Dotenv = require("dotenv-webpack");
 
 module.exports = {
-  entry: "./src/app.js",
-  mode: "development",
+  entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "main.js",
+    path: __dirname,
+    publicPath: "/",
+    filename: "bundle.js",
   },
-  plugins: [new Dotenv()],
+  // plugins: [new Dotenv()],
   devtool: "sourcemap",
 };

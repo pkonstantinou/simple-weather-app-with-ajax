@@ -65,10 +65,19 @@ const loadWeatherCard = (data) => {
 };
 
 const initWeatherCard = async () => {
-  const { coords } = await getPosition();
-  const data = await getWeatherByCoordinates(coords.latitude, coords.longitude);
+  try {
+    const { coords } = await getPosition();
+    const data = await getWeatherByCoordinates(
+      coords.latitude,
+      coords.longitude
+    );
+    disableSpinner();
+    loadWeatherCard(data);
+  } catch {
+    const data = await getWeatherByName("Athens");
+    loadWeatherCard(data);
+  }
   disableSpinner();
-  loadWeatherCard(data);
 };
 
 const validWeatherSearchEvent = (event) => {
@@ -100,7 +109,6 @@ const handleWeatherSearch = async (event) => {
   if (validWeatherSearchEvent(event)) {
     const cityNameInput = document.querySelector("#city-name");
     const data = await getWeatherByName(cityNameInput.value);
-    console.log(data);
     if (validResponse(data)) {
       loadWeatherCard(data);
       cityNameInput.blur();
