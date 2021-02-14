@@ -1,7 +1,7 @@
 <h2 align="center">Weather App</h2>
 
 <p align="center">
-  <img width="500" style="border-radius: 8px;"alt="weather-app" src="https://user-images.githubusercontent.com/76179035/107866161-e8bb1f00-6e6d-11eb-8a2c-82b6fa8cf172.png">
+  <img  style="border-radius: 8px;" width="500" alt="weather-app" src="https://user-images.githubusercontent.com/76179035/107866161-e8bb1f00-6e6d-11eb-8a2c-82b6fa8cf172.png">
 </p>
 
 ## Description
